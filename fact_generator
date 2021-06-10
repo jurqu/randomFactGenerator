@@ -1,0 +1,21 @@
+import csv
+import random
+
+while True:
+    with open("facts.txt", "r") as random_facts:
+        lines = random_facts.read()
+        facts = list(map(str, lines.split(".")))
+
+    input("Press enter for a random fact ")
+    print(random.choice(facts))
+
+    while True:
+        answer = str(input('Care for another random fact? (y/n): '))
+        if answer in ('y', 'n'):
+            break
+        print("invalid input.")
+    if answer == 'y':
+        continue
+    else:
+        print("Goodbye")
+        break
